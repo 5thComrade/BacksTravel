@@ -1,3 +1,4 @@
+const fortune = require('./libs/fortune');
 const express = require('express');
 const expressHandlebars = require('express-handlebars');    
 
@@ -16,9 +17,8 @@ const port = process.env.PORT || 3000;
 app.get('/', (req, res) => res.render('home'));
 
 app.get('/about', (req, res) => {
-    const love = "I love you";
     res.render('about', {
-        love: love,
+        fortune: fortune
     })
 });
 
